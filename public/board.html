@@ -1,33 +1,90 @@
-<!Doctype html>
-<html lang="fr">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <title>CV</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script src="/home/azrod/Documents/GitHub/M-thode-dev-log-front/main.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" />
+    <title>Listes des clients</title>
 </head>
+
 <body>
-  
-<div><h1> Curiculum Vitae (CV) </h1></div>
-  
-<button id="aperçu"> Aperçu </button>
-<div id="r">Voici le <b>CV</b> de la personne. Pour le voir veuillez cliquer sur le <strong>bouton</strong> <i>aperçu</i> ci-dessous SVP.</div>
-  
- 
-<script>
-    $(function() {
-        $('#aperçu').click(function() {
-            $.getJSON('essai.json', function(donnees) {
-            $('#r').html('<p><b>Nom</b> : ' + donnees.nom + '</p>');
-            $('#r').append('<p><b>Age</b> : ' + donnees.age + '</p>');
-            $('#r').append('<p><b>Ville</b> : ' + donnees.ville + '</p>');
-            $('#r').append('<p><b>Domaine de compétences</b> : ' + donnees.domaine + '</p>');
-            });
-        });
-    });
-</script>
-  
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-uppercase mb-0">Listes des clients</h5>
+                        <br>
+                        <button type="button" class="btn btn-primary"><i class="fa fa-user"></i> Ajouter un
+                            client</button>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table no wrap">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="id">#</th>
+                                    <th scope="col" class="name">Nom Prénom</th>
+                                    <th scope="col" class="societe">Société</th>
+                                    <th scope="col" class="pays">Pays</th>
+                                    <th scope="col" class="email">Email</th>
+                                    <th scope="col" class="cration">Création</th>
+                                    <th scope="col" class="voir"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="p1-4">1</td>
+                                    <td>
+                                        <h5 class="font medium">Wilfried Moisan</h5>
+                                    </td>
+                                    <td>
+                                        <span class="text-muted">Microsoft</span>
+                                    </td>
+                                    <td>
+                                        <span class="text-muted">San Fransisco</span>
+                                    </td>
+                                    <td>
+                                        <span class="text-muted">wilfried.moisan@gmail.com</span>
+                                    </td>
+                                    <td>
+                                        <span class="text-muted">31 Mars 1998</span>
+                                        <span class="text-muted">00:45</span>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="button online"><i class="fafa"></i> </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="p1-4">2</td>
+                                    <td>
+                                        <h5 class="font medium">Moisan Romuald</h5>
+                                    </td>
+                                    <td>
+                                        <span class="text-muted">Google</span>
+                                    </td>
+                                    <td>
+                                        <span class="text-muted">France</span>
+                                    </td>
+                                    <td>
+                                        <span class="text-muted">romuald.moisan@gmail.com</span>
+                                    </td>
+                                    <td>
+                                        <span class="text-muted">20 Septembre 2024</span>
+                                        <span class="text-muted">12:02</span>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="button online"><i class="fafa"></i> </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
-  
+
 </html>
