@@ -1,34 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Centre de gestion Client</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <title>Listes des clients</title>
 </head>
 
 <body>
-    <h1>Centre de Gestion Client</h1>
     <div class="container">
-        <table class="table table-striped">
-            <tr class="bg-info">
-                <th>id</th>
-                <th>email</th>
-                <th>first</th>
-                <th>last</th>
-                <th>company</th>
-                <th>created_at</th>
-                <th>country</th>
-            </tr>
-            <tbody id="myTable">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-uppercase mb-0">Listes des clients</h5>
+                        <br>
+                        <a href="ancien.html"><button type="button" class="btn btn-primary"><i class="fa fa-user"></i> Ajouter un
+                            client</button></a>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table no-wrap user-table mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="border-0 text-uppercase font-medium p1-4">id</th>
+                                    <th scope="col" class="border-0 text-uppercase font-medium">Nom Prénom</th>
+                                    <th scope="col" class="border-0 text-uppercase font-medium">Société</th>
+                                    <th scope="col" class="border-0 text-uppercase font-medium">Pays</th>
+                                    <th scope="col" class="border-0 text-uppercase font-medium">E-mail</th>
+                                    <th scope="col" class="border-0 text-uppercase font-medium">Création</th>
+                                    <th scope="col" class="border-0 text-uppercase font-medium"></th>
+                                </tr>
+                            </thead>
+                            <tbody id="myTable">
 
-            </tbody>
-        </table>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script>
         let requestURL = "info.json";
@@ -45,13 +60,13 @@
             var table = document.getElementById("myTable");
             for (var i = 0; i < text.length; i++) {
                 var row = `<tr>
-                                    <td>${text[i]["id"]}</td>
-                                    <td>${text[i]["email"]}</td>
-                                    <td>${text[i]["first"]}</td>
-                                    <td>${text[i]["last"]}</td>
-                                    <td>${text[i]["company"]}</td>
-                                    <td>${text[i]["created_at"]}</td>
-                                    <td>${text[i]["country"]}</td>
+                                    <td><span class="p1-4">${text[i]["id"]}</span></td>
+                                    <td><span class="font-medium mb-0">${text[i]["last"]} ${text[i]["first"]}</span></td>
+                                    <td><span class="text-muted">${text[i]["country"]}</span></td>
+                                    <td><span class="text-muted">${text[i]["company"]}</span></td>
+                                    <td><span class="text-muted">${text[i]["email"]}</span></td>
+                                    <td><span class="text-muted">${text[i]["created_at"]}</span></td>
+                                    <td><button type="button" class="btn btn-outline-info btn-circle btn-lg btn-circle m1-2"><i class="fa fa-edit"></i></button></td>
 					            </tr>`;
                 table.innerHTML += row;
             }
@@ -60,31 +75,3 @@
 </body>
 
 </html>
-
-<!-- <a href="board.html">Listes des clients</a>
-    <form action="/ma-page-de-traitement" method="post">
-        <div>
-            <label for="name">Nom :</label>
-            <input type="text" id="name" name="user_name">
-        </div>
-        <div>
-            <label for="name">Prénom :</label>
-            <input type="text" id="surname" name="user_surname">
-        </div>
-        <div>
-            <label for="mail">e-mail&nbsp;:</label>
-            <input type="email" id="mail" name="user_mail">
-        </div>
-        <div>
-            <label for="name">Société :</label>
-            <input type="text" id="societe" name="user_societe">
-        </div>
-        <div>
-            <label for="name">Pays :</label>
-            <input type="text" id="pays" name="user_pays">
-        </div>
-        <div class="button">
-            <button type="submit">Envoyer la requète</button>
-        </div>
-    </form> -->
-
