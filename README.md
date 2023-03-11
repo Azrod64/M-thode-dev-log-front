@@ -25,3 +25,15 @@ eslint en donnant accès à manoel.deligny@gmail.com
     - Modification d'un client
 
 - Mettre les controles de champs pour la creation de client
+<td>${text[i]["email"]}</td>
+							<td>${text[i]["first"]}</td>
+                            <td>${text[i]["last"]}</td>
+                            <td>${text[i]["company"]}</td>
+                            <td>${text[i]["created_at"]}</td>
+                            <td>${text[i]["country"]}</td>
+
+for (var i = 0; i < text.length; i++) {
+        var row = `<tr>
+							<td>${text[i]["id"]}</td>
+					  </tr>`;
+        table.innerHTML += row;
