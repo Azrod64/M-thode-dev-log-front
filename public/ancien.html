@@ -57,40 +57,37 @@
     <a href="index.html">
         <h2 style="text-align: center;">Formulaire d'inscription</h2>
     </a>
-    <form id="formElem" name="RegForm">
+    <form method="post" action="index.html">
         <div>
-            <label for="Nom">Nom:</label>
-            <input type="text" id="Nom" size="60" name="Nom" />
+            <label for="last">Nom:</label>
+            <input type="text" id="last" size="60" name="last" />
         </div>
         <br />
         <div>
-            <label for="Prenom">Prénom:</label>
-            <input type="text" id="Prenom" size="60" name="Prenom" />
+            <label for="first">Prénom:</label>
+            <input type="text" id="first" size="60" name="first" />
         </div>
         <br />
         <div>
-            <label for="E-mail" l>Adresse électronique:</label>
-            <input type="text" id="E-mail" size="60" name="Email" />
+            <label for="email" l>Adresse électronique:</label>
+            <input type="text" id="email" size="60" name="email" />
         </div>
         <br />
         <div>
-            <label for="Societe">Société:</label>
-            <input type="text" id="Societe" size="60" name="Societe" />
+            <label for="company">Société:</label>
+            <input type="text" id="company" size="60" name="company" />
         </div>
         <br />
         <div>
-            <label for="Pays">Pays:</label>
-            <input type="text" id="Pays" size="60" name="Pays" />
+            <label for="country">Pays:</label>
+            <input type="text" id="country" size="60" name="country" />
         </div>
         <br />
         <div class="buttons">
             <input type="submit" />
             <input type="reset" value="Réinitialiser" name="Réinitialiser" />
         </div>
-    </form>
-    <script src="script.js"></script>
-
-    
+    </form>   
 </body>
 
 </html>
