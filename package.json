@@ -1,8 +1,14 @@
 {
   "devDependencies": {
-    "eslint": "^8.35.0"
+    "eslint": "^8.35.0",
+    "eslint-plugin-import": "^2.27.5"
   },
   "dependencies": {
-    "express": "^4.18.2"
+    "buffer": "^6.0.3",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "fs.promises": "^0.1.2",
+    "logger": "^0.0.1",
+    "xmlhttprequest": "^1.8.0"
   }
 }

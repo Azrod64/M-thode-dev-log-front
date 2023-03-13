@@ -20,8 +20,9 @@
                     <div class="card-body">
                         <h5 class="card-title text-uppercase mb-0">Listes des clients</h5>
                         <br>
-                        <a href="ancien.html"><button type="button" class="btn btn-primary"><i class="fa fa-user"></i> Ajouter un
-                            client</button></a>
+                        <a href="ancien.html"><button type="button" class="btn btn-primary"><i class="fa fa-user"></i>
+                                Ajouter un
+                                client</button></a>
                     </div>
                     <div class="table-responsive">
                         <table class="table no-wrap user-table mb-0">
@@ -48,7 +49,7 @@
     <script>
         let requestURL = "info.json";
         let request = new XMLHttpRequest();
-        request.open("GET",requestURL);
+        request.open("GET", requestURL);
         request.responseType = "json";
         request.send();
         request.onload = function print() {
@@ -71,6 +72,7 @@
                 table.innerHTML += row;
             }
         }
+
     </script>
 </body>
 

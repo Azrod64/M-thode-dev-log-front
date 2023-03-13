@@ -1,91 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Centre de gestion Client</title>
+    <title>Titre du document</title>
+    <script data-main="scripts/app" src="scripts/require.js"></script>
+    <style>
+        .w3docs {
+            margin-left: 70px;
+            font-weight: bold;
+            text-align: left;
+            font-family: sans-serif, bold, Arial, Helvetica;
+            font-size: 14px;
+        }
+
+        .buttons {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        div input {
+            margin-right: 10px;
+        }
+
+        form {
+            margin: 0 auto;
+            width: 600px;
+        }
+
+        form input {
+            padding: 10px;
+        }
+
+        form select {
+            background-color: #ffffff;
+            padding: 5px;
+        }
+
+        form textarea {
+            padding: 10px;
+            margin-bottom: 5px;
+        }
+
+        form label {
+            display: block;
+            width: 100%;
+            margin-bottom: 5px;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Centre de Gestion Client</h1>
-    <a href="board.html">Board</a>
-    <div class="container">
-        <table class="table table-striped">
-            <tr class="bg-info">
-                <th>id</th>
-                <th>email</th>
-                <th>first</th>
-                <th>last</th>
-                <th>company</th>
-                <th>created_at</th>
-                <th>country</th>
-            </tr>
-            <tbody id="myTable">
+    <a href="index.html">
+        <h2 style="text-align: center;">Formulaire d'inscription</h2>
+    </a>
+    <form id="formElem" name="RegForm">
+        <div>
+            <label for="Nom">Nom:</label>
+            <input type="text" id="Nom" size="60" name="Nom" />
+        </div>
+        <br />
+        <div>
+            <label for="Prenom">Prénom:</label>
+            <input type="text" id="Prenom" size="60" name="Prenom" />
+        </div>
+        <br />
+        <div>
+            <label for="E-mail" l>Adresse électronique:</label>
+            <input type="text" id="E-mail" size="60" name="Email" />
+        </div>
+        <br />
+        <div>
+            <label for="Societe">Société:</label>
+            <input type="text" id="Societe" size="60" name="Societe" />
+        </div>
+        <br />
+        <div>
+            <label for="Pays">Pays:</label>
+            <input type="text" id="Pays" size="60" name="Pays" />
+        </div>
+        <br />
+        <div class="buttons">
+            <input type="submit" />
+            <input type="reset" value="Réinitialiser" name="Réinitialiser" />
+        </div>
+    </form>
+    <script src="script.js"></script>
 
-            </tbody>
-        </table>
-    </div>
-    <script>
-        let requestURL = "info.json";
-        let request = new XMLHttpRequest();
-        request.open("GET",requestURL);
-        request.responseType = "json";
-        request.send();
-        request.onload = function print() {
-            const text = request.response;
-            buildTable(text);
-        };
-        
-        function buildTable(text) {
-            var table = document.getElementById("myTable");
-            for (var i = 0; i < text.length; i++) {
-                var row = `<tr>
-                                    <td>${text[i]["id"]}</td>
-                                    <td>${text[i]["email"]}</td>
-                                    <td>${text[i]["first"]}</td>
-                                    <td>${text[i]["last"]}</td>
-                                    <td>${text[i]["company"]}</td>
-                                    <td>${text[i]["created_at"]}</td>
-                                    <td>${text[i]["country"]}</td>
-					            </tr>`;
-                table.innerHTML += row;
-            }
-        }
-    </script>
+    
 </body>
 
 </html>
-
-<!-- <a href="board.html">Listes des clients</a>
-    <form action="/ma-page-de-traitement" method="post">
-        <div>
-            <label for="name">Nom :</label>
-            <input type="text" id="name" name="user_name">
-        </div>
-        <div>
-            <label for="name">Prénom :</label>
-            <input type="text" id="surname" name="user_surname">
-        </div>
-        <div>
-            <label for="mail">e-mail&nbsp;:</label>
-            <input type="email" id="mail" name="user_mail">
-        </div>
-        <div>
-            <label for="name">Société :</label>
-            <input type="text" id="societe" name="user_societe">
-        </div>
-        <div>
-            <label for="name">Pays :</label>
-            <input type="text" id="pays" name="user_pays">
-        </div>
-        <div class="button">
-            <button type="submit">Envoyer la requète</button>
-        </div>
-    </form> -->
-
