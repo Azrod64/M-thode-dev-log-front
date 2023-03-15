@@ -1,10 +1,18 @@
 const express = require("express");
 const router = express.Router();
-const {addUser,getJSON,modifUser,deleteUser} = require("../data/main");// récuperer les fonctions de ../data
+const {addUser,getJSON,modifUser,deleteUser,check_field} = require("../data/main");// récuperer les fonctions de ../data
 
 
 router.post("/", function (req, res) { // récupère la requète "POST"
-    addUser(req.body);
+    if(check_field(req.body) == 1) // permet de vérifier le champ email
+    {
+        addUser(req.body);
+    }
+    else
+    {
+        console.log("Impossible car les champs sont mal rensigné");
+        // dire à l'utilisateur qu'il y a eu un problème
+    }
     res.redirect("/index.html");
 });
 router.get("/", function (req, res) { // récupère la requète "GET"

@@ -54,4 +54,19 @@ function find_rank(content,more) // content : le JSON, more : un objet du JSON
     }
     return rang;
 }
-module.exports = { addUser, getJSON, modifUser, deleteUser }; // permet de pouvoir exporter les fonctions dans d'autres fichier
+const check_field = (options) => {
+    function checkEmail(email) {
+        var re = /^[a-z0-9.-]{2,}@+[a-z0-9.-]{2,}$/i;
+        return re.test(email);
+    }
+    function checkName(name) {
+        return isNaN(name);
+    }
+    if (checkEmail(options.email) && checkName(options.last)) {
+        return 1;
+    } else {
+        return 0;
+    }
+};
+
+module.exports = { addUser, getJSON, modifUser, deleteUser,check_field}; // permet de pouvoir exporter les fonctions dans d'autres fichier

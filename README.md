@@ -44,8 +44,6 @@ Au démarrage de l'application, on peut choisir en passant en paramètre un  sto
 Le projet BackEnd doit être structuré avec un découpage logique.
 Les 2 projets doivent utiliser eslint, avec un fichier package.json pour pouvoir installer les dépendances.
 	
-Chaque projet doit être sur github ou gitlab, avec une explication dans le Readme pour en expliquer le déploiement. (merci d'en faire le test avant pour vous assurer du bon fonctionnement). Les liens doivent être mis dans le fichier suivant : 
-Et les droits en accès doivent être donné à manoel.deligny@gmail.com
 Le git ne doit pas comporter les librairies utilisées dans le projet.
 Le git doit comporter l’historique des push et commits pour voir l’évolution de vos applications.
 
