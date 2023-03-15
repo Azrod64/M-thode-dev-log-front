@@ -41,10 +41,7 @@ Le contrôle des champs doit être fait autant dans le FrontEnd que dans l'API d
 
 ### readArguments
 
-Permet de lire les arguments passé dans la commande.
-
-
-**Exemple**
+Permet de lancer le projet quand vous êtes dans le répertoire racine.
 
 ```bash
 $ node main.js
