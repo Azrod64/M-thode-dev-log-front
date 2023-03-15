@@ -33,3 +33,8 @@ Le git doit comporter l’historique des push et commits pour voir l’évolutio
 
 Le contrôle des champs doit être fait autant dans le FrontEnd que dans l'API du BackEnd.
 
+# Architecture
+
+![alt text](public/diagram.png)
+
+
