@@ -6,7 +6,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.min.js"></script>
 <style>
-    .container {
+    .col-md-5 {
         width: 70%;
         margin: 15px auto;
     }
@@ -24,11 +24,12 @@
 </style>
 
 <body>
-    <div class="container">
-        <h2>Line Chart</h2>
-        <div>
-            <canvas id="myChart"></canvas>
-        </div>
+    <div class="titre">
+        <a href="index.html">
+            <h2>Diagramme de répartition par pays</h2>
+    </div>
+    <div class="col-md-5">
+        <canvas id="myChart"></canvas>
     </div>
 </body>
 
@@ -56,30 +57,44 @@
                 countList[countListIndex].count += 1; // Increase counter if already in the list
             }
         }
+        countList.sort((a, b) => a.count - b.count);
         return countList;
     }
-    
+
     function createGraph(data) {
-        let objet = createCountList(data,"country");
+        let objet = createCountList(data, "country");
         let pays = [];
-        let counter= [];
+        let counter = [];
         for (let key of objet) {
             pays.push(key.country);
             counter.push(key.count);
         }
-        var ctx = document.getElementById("myChart").getContext("2d");
+        var ctx = document.getElementById("myChart").getContext('2d');
         var myChart = new Chart(ctx, {
-            type: "line",
+            type: 'bar',
             data: {
                 labels: pays,
-                datasets: [
-                    {
-                        label: "Courbe des ",
-                        data: counter,
-                        backgroundColor: "rgba(153,205,1,0.6)",
-                    }
-                ],
+                datasets: [{
+                    label: "Nombre de fois que le pays est sélectionné",
+                    data: counter,
+                    backgroundColor:
+                        'rgba(54, 162, 235, 0.2)'
+                    ,
+                    borderColor:
+                        'rgba(54, 162, 235, 1)'
+                    ,
+                    borderWidth: 1
+                }]
             },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
         });
     }
 
