@@ -9,11 +9,11 @@ const addUser = (options) => {
     let JSONData = JSON.parse(fileData);
     if(JSONData.length == 0)
     {
-        options.id = 1;
+        options.id = 1; // quand le tableau est vide, stocke 1 dans l'id
     }
     else
     {
-        options.id = JSONData[JSONData.length - 1].id + 1; // ajouter l'id : incrémente l'id du client précédent
+        options.id = Math.max(...JSONData.map(e => e.id)) + 1; // ajouter l'id : incrémente l'id par rapport au client précédent
     }
     options.created_at = (new Date()).toUTCString(); // ajouter la date de création du client
     JSONData.push(options);
@@ -22,8 +22,8 @@ const addUser = (options) => {
 const modifUser = (options) => {
     const fileData = fs.readFileSync("./data/info.json", "utf-8");
     let JSONData = JSON.parse(fileData);
-
-    JSONData[options.id-1].last = options.last;
+    
+    JSONData[options.id-1].last = options.last; // Permet d'écrire par dessus les champs existants
     JSONData[options.id-1].first = options.first;
     JSONData[options.id-1].email = options.email;
     JSONData[options.id-1].company = options.company;
@@ -44,4 +44,4 @@ const getJSON = () => {
     const fileData = fs.readFileSync("./data/info.json", "utf-8").toString();
     return fileData;
 };
-module.exports = {addUser,getJSON,modifUser,deleteUser};
+module.exports = {addUser,getJSON,modifUser,deleteUser}; // permet de pouvoir exporter les fonctions dans d'autres fichier

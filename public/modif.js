@@ -16,7 +16,7 @@ fetch("/vroom", {
     });
 
 function pre_rempli_JS(options) {
-    let last = document.getElementById("last"); // récupère l'id 
+    let last = document.getElementById("last"); // récupère l'id "last"
     let first = document.getElementById("first");
     let email = document.getElementById("email");
     let company = document.getElementById("company");

@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const {addUser,getJSON,modifUser,deleteUser} = require("../data/main");
+const {addUser,getJSON,modifUser,deleteUser} = require("../data/main");// récuperer les fonctions de ../data
 
 
 router.post("/", function (req, res) { // récupère la requète "POST"
@@ -14,11 +14,11 @@ router.post("/modif", function (req, res) { // récupère la requète "POST"
     if(req.body.changement == "modifier") // attention, il peut ne pas y etre, cela peut provoquer des erreurs
     {
         
-        modifUser(req.body);
+        modifUser(req.body);// fonction qui modifie un user 
     }
     else
     {
-        deleteUser(req.body);
+        deleteUser(req.body);// fonction qui delete un user
     }
     res.redirect("/index.html");
 });

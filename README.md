@@ -1,27 +1,35 @@
 # Moisan_MDL_2
 
-C'est ici que se trouve la partie 2 du TD de MDL.
+L'objectif est de fournir 2 projets : 
+Un projet Front End comportant des écrans permettant de :
+Consulter la liste des clients
+Ajouter un client
+Modifier un client 
+Supprimer un client
+(bonus) Voir les statistiques de la base de client
+		Exemple : la répartition par pays ou société en représentation graphique
 
-- Créer un nouveau projet "Front" en l'initialisant dans github ou gitlab et en ajoutant 
-eslint en donnant accès à manoel.deligny@gmail.com
-- Utiliser le .gitignore pour limiter le nombre de fichier sur votre projet
+Le projet FrontEnd comporte un serveur web qui permet de lancer l'application web.
+La partie écran peut être développée en javascript Vanilla, JQuery, Angular, VueJS ou ReactJS. 
+L'application Front End appelle directement le projet BackEnd pour en récupérer et envoyer les données.
 
-- Utiliser le module "express" pour créer un projet web
+Un projet BackEnd :
+Il expose une API permettant de :
+Lister les clients
+Ajouter un client
+Modifier un client
+Supprimer un client
+(bonus) récupérer les statistiques
+Il est possible de faire les mêmes actions en ligne de commande
+Au démarrage de l'application, on peut choisir en passant en paramètre un  stockage en fichier ou en BDD (en utilisant https://cloud.mongodb.com/ par exemple).
+	
+Le projet BackEnd doit être structuré avec un découpage logique tel que étudié en cours.
+Les 2 projets doivent utiliser eslint, avec un fichier package.json pour pouvoir installer les dépendances.
+	
+Chaque projet doit être sur github ou gitlab, avec une explication dans le Readme pour en expliquer le déploiement. (merci d'en faire le test avant pour vous assurer du bon fonctionnement). Les liens doivent être mis dans le fichier suivant : 
+Et les droits en accès doivent être donné à manoel.deligny@gmail.com
+Le git ne doit pas comporter les librairies utilisées dans le projet.
+Le git doit comporter l’historique des push et commits pour voir l’évolution de vos applications.
 
-- Créer votre premier web server
+Le contrôle des champs doit être fait autant dans le FrontEnd que dans l'API du BackEnd.
 
-- Créer 3 pages
-    - Liste des clients : 
-        une page contenant un tableau en HTML qui presente les informations en liste des clients + 
-        un bouton permettant d'ajouter un client et donc d'aller vers la page de création de client
-    - Creation de client : mettre en page en HTML un formulaire de saisie qui permettra d'ajouer des clients
-        - email
-        - prénom
-        - nom
-        - société
-        - pays
-        (auto généré coté serveur) - date de création
-        (auto généré coté serveur) - id = identifiant unique
-    - Modification d'un client
-
-- Mettre les controles de champs pour la creation de client
