@@ -36,7 +36,7 @@ L'application Front End appelle directement le projet BackEnd pour en récupére
     - Ajouter un client
     - Modifier un client
     - Supprimer un client
-    - (bonus) récupérer les statistiques
+    - Récupérer les statistiques
 
 Il est possible de faire les mêmes actions en ligne de commande
 Au démarrage de l'application, on peut choisir en passant en paramètre un  stockage en fichier ou en BDD (en utilisant https://cloud.mongodb.com/ par exemple).

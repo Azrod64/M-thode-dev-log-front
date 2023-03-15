@@ -11,7 +11,6 @@ router.get("/", function (req, res) { // récupère la requète "GET"
     res.send(getJSON());
 });
 router.post("/modif", function (req, res) { // récupère la requète "POST"
-    console.log(req.body);
     if(req.body.changement == "modifier") // attention, il peut ne pas y etre, cela peut provoquer des erreurs
     {
         modifUser(req.body);// fonction qui modifie un user 

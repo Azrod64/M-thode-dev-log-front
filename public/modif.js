@@ -5,7 +5,6 @@ fetch("/vroom", {
     .then((request) =>
         request.json())
     .then((data) => {
-        console.log(data);
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString); // permet de chercher les paramètre dans l'URL
         const id = urlParams.get("id"); // récupere l'id qui se trouctrouve dans l'URL
@@ -24,7 +23,6 @@ fetch("/vroom", {
     });
 
 function pre_rempli_JS(options) {
-    console.log(options);
     let last = document.getElementById("last"); // récupère l'id "last"
     let first = document.getElementById("first");
     let email = document.getElementById("email");

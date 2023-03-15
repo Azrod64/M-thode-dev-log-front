@@ -20,7 +20,6 @@ const addUser = (options) => {
 const modifUser = (options) => {
     const fileData = fs.readFileSync("./data/info.json", "utf-8");
     let JSONData = JSON.parse(fileData);
-    console.log(JSONData);
     let rang = find_rank(JSONData,options);
     JSONData[rang].last = options.last; // Permet d'écrire par dessus les champs existants
     JSONData[rang].first = options.first;
