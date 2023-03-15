@@ -14,9 +14,6 @@ La partie écran peut être développée en javascript Vanilla, JQuery, Angular,
 L'application Front End appelle directement le projet BackEnd pour en récupérer et envoyer les données.
 
 - Un projet BackEnd :
-
-Il expose une API permettant de :
-
     - Lister les clients
     - Ajouter un client
     - Modifier un client
