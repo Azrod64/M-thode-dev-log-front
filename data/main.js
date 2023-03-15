@@ -33,10 +33,15 @@ const modifUser = (options) => {
 };
 const deleteUser = (options) => {
     // supprime un utilisateur
+    console.log(`On va supprimer le client portant l'id : ${options.id}`);
+    const fileData = fs.readFileSync("./data/info.json", "utf-8");
+    let JSONData = JSON.parse(fileData);
+    JSONData.splice(options.id-1,1); // supprime "1" élément en position "options.id-1" 
+    fs.writeFileSync("./data/info.json", JSON.stringify(JSONData)); // save it
 };
 const getJSON = () => {
     // renvoie le JSON intact
     const fileData = fs.readFileSync("./data/info.json", "utf-8").toString();
     return fileData;
 };
-module.exports = {addUser,getJSON,modifUser};
+module.exports = {addUser,getJSON,modifUser,deleteUser};
