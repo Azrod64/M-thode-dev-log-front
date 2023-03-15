@@ -5,10 +5,18 @@ fetch("/vroom", {
     .then((request) =>
         request.json())
     .then((data) => {
+        console.log(data);
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString); // permet de chercher les paramètre dans l'URL
         const id = urlParams.get("id"); // récupere l'id qui se trouctrouve dans l'URL
-        let user = data[id - 1]; // stocke dans user la ligne du JSON correspondant à l'id choisit
+        let rang;
+        let compt = 0;
+        for(let text of data) // si il y a des trou, cet boucle va chercher le rang de l'id 
+        {
+            if(text.id == id) rang = compt;
+            compt++;
+        }
+        let user = data[rang]; // stocke dans user la ligne du JSON correspondant à l'id choisit
         pre_rempli_JS(user);
     })
     .catch((error) => {
@@ -16,6 +24,7 @@ fetch("/vroom", {
     });
 
 function pre_rempli_JS(options) {
+    console.log(options);
     let last = document.getElementById("last"); // récupère l'id "last"
     let first = document.getElementById("first");
     let email = document.getElementById("email");
