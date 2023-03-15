@@ -1,4 +1,22 @@
-# Moisan_MDL_2
+## Fonctions utilitaires
+
+### Arguments
+
+Permet de lancer le projet quand vous êtes dans le répertoire racine.
+
+```bash
+$ node main.js
+```
+Puis rendez vous sur votre navigateur pour utiliser l'API.
+Tapez : 
+```
+http://localhost:3000
+```
+## Architecture
+
+![alt text](public/diagram.png)
+
+# Consignes
 
 L'objectif est de fournir 2 projets : 
 
@@ -32,22 +50,3 @@ Le git ne doit pas comporter les librairies utilisées dans le projet.
 Le git doit comporter l’historique des push et commits pour voir l’évolution de vos applications.
 
 Le contrôle des champs doit être fait autant dans le FrontEnd que dans l'API du BackEnd.
-
-# Architecture
-
-![alt text](public/diagram.png)
-
-## Fonctions utilitaires
-
-### readArguments
-
-Permet de lancer le projet quand vous êtes dans le répertoire racine.
-
-```bash
-$ node main.js
-```
-Puis rendez vous sur votre navigateur pour utiliser l'API.
-Tapez : 
-```URL
-http://localhost:3000
-```
