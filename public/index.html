@@ -20,7 +20,7 @@
                     <div class="card-body">
                         <h5 class="card-title text-uppercase mb-0">Listes des clients</h5>
                         <br>
-                        <a href="ancien.html"><button type="button" class="btn btn-primary"><i class="fa fa-user"></i>
+                        <a href="add.html"><button type="button" class="btn btn-primary"><i class="fa fa-user"></i>
                                 Ajouter un
                                 client</button></a>
                     </div>
@@ -46,34 +46,7 @@
             </div>
         </div>
     </div>
-    <script>
-        let requestURL = "info.json";
-        let request = new XMLHttpRequest();
-        request.open("GET", requestURL);
-        request.responseType = "json";
-        request.send();
-        request.onload = function print() {
-            const text = request.response;
-            buildTable(text);
-        };
-        
-        function buildTable(text) {
-            var table = document.getElementById("myTable");
-            for (var i = 0; i < text.length; i++) {
-                var row = `<tr>
-                                    <td><span class="p1-4">${text[i]["id"]}</span></td>
-                                    <td><span class="font-medium mb-0">${text[i]["last"]} ${text[i]["first"]}</span></td>
-                                    <td><span class="text-muted">${text[i]["company"]}</span></td>
-                                    <td><span class="text-muted">${text[i]["country"]}</span></td>
-                                    <td><span class="text-muted">${text[i]["email"]}</span></td>
-                                    <td><span class="text-muted">${text[i]["created_at"]}</span></td>
-                                    <td><button type="button" class="btn btn-outline-info btn-circle btn-lg btn-circle m1-2"><i class="fa fa-edit"></i></button></td>
-					            </tr>`;
-                table.innerHTML += row;
-            }
-        }
-
-    </script>
+    <script src="main.js"></script>
 </body>
 
 </html>
