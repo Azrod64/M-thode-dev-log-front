@@ -1,4 +1,4 @@
-## Fonctions utilitaires
+# Projet Méthode et Dévellopement Logiciel
 
 ### Arguments
 
@@ -16,7 +16,7 @@ http://localhost:3000
 
 ![alt text](public/diagram.png)
 
-# Consignes
+## Consignes
 
 L'objectif est de fournir 2 projets : 
 
