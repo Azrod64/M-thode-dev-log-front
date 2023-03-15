@@ -46,3 +46,8 @@ Permet de lancer le projet quand vous êtes dans le répertoire racine.
 ```bash
 $ node main.js
 ```
+Puis rendez vous sur votre navigateur pour utiliser l'API.
+Tapez : 
+```URL
+http://localhost:3000
+```
