@@ -30,4 +30,4 @@ const getJSON = () => {
     const fileData = fs.readFileSync("./data/info.json", "utf-8").toString();
     return fileData;
 };
-module.exports = {addUser,getJSON};
+module.exports = {addUser,getJSON,modifUser};
