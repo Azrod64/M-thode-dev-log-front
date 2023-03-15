@@ -20,7 +20,16 @@ const addUser = (options) => {
     fs.writeFileSync("./data/info.json", JSON.stringify(JSONData)); // save it
 };
 const modifUser = (options) => {
-    // modification user
+    const fileData = fs.readFileSync("./data/info.json", "utf-8");
+    let JSONData = JSON.parse(fileData);
+
+    JSONData[options.id-1].last = options.last;
+    JSONData[options.id-1].first = options.first;
+    JSONData[options.id-1].email = options.email;
+    JSONData[options.id-1].company = options.company;
+    JSONData[options.id-1].country = options.country;
+    
+    fs.writeFileSync("./data/info.json", JSON.stringify(JSONData)); // save it
 };
 const deleteUser = (options) => {
     // supprime un utilisateur

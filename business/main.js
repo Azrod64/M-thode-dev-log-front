@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const {addUser,getJSON} = require("../data/main");
+const {addUser,getJSON,modifUser} = require("../data/main");
 
 
 router.post("/", function (req, res) { // récupère la requète "POST"
@@ -10,7 +10,8 @@ router.post("/", function (req, res) { // récupère la requète "POST"
 router.get("/", function (req, res) { // récupère la requète "GET"
     res.send(getJSON());
 });
-router.put("/", function (req, res) { // récupère la requète "PUT"
-    res.send(req.query);
+router.post("/modif", function (req, res) { // récupère la requète "POST"
+    modifUser(req.body);
+    res.redirect("/index.html");
 });
 module.exports = router;
