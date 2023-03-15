@@ -1,11 +1,12 @@
 # Moisan_MDL_2
 
 L'objectif est de fournir 2 projets : 
-Un projet Front End comportant des écrans permettant de :
-Consulter la liste des clients
-Ajouter un client
-Modifier un client 
-Supprimer un client
+
+- Un projet Front End comportant des écrans permettant de :
+    - Consulter la liste des clients
+    - Ajouter un client
+    - Modifier un client 
+    - Supprimer un client
 (bonus) Voir les statistiques de la base de client
 		Exemple : la répartition par pays ou société en représentation graphique
 
@@ -13,7 +14,7 @@ Le projet FrontEnd comporte un serveur web qui permet de lancer l'application we
 La partie écran peut être développée en javascript Vanilla, JQuery, Angular, VueJS ou ReactJS. 
 L'application Front End appelle directement le projet BackEnd pour en récupérer et envoyer les données.
 
-Un projet BackEnd :
+- Un projet BackEnd :
 Il expose une API permettant de :
 Lister les clients
 Ajouter un client
