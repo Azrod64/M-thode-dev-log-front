@@ -37,4 +37,15 @@ Le contrôle des champs doit être fait autant dans le FrontEnd que dans l'API d
 
 ![alt text](public/diagram.png)
 
+## Fonctions utilitaires
 
+### readArguments
+
+Permet de lire les arguments passé dans la commande.
+
+
+**Exemple**
+
+```bash
+$ node main.js
+```
